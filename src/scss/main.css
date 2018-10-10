@@ -11,6 +11,7 @@
   /* set base values */
   --text-base-size: 1em;
   --text-scale-ratio: 1.2;
+  --baseline: 24px;
   /* type scale */
   --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
   --text-sm: calc(1em / var(--text-scale-ratio));
@@ -18,7 +19,20 @@
   --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
   --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
   --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
-  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio)); }
+  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  /* spacing values */
+  --space-xxxs: 0.25em;
+  --space-xxs:  0.375em;
+  --space-xs:   0.5em;
+  --space-sm:   0.75em;
+  --space-md:   1.25em;
+  --space-lg:   2em;
+  --space-xl:   3.25em;
+  --space-xxl:  5.25em;
+  --space-xxxl: 8.5em;
+  /* line-height */
+  --heading-line-height: 1.2;
+  --body-line-height: 1.4; }
 
 @media only screen and (max-width: 75em) {
   :root {
@@ -27,6 +41,25 @@
 
 /* This file contains very basic styles.
    ========================================================================== */
+h1, h2, h3, h4, form legend {
+  margin-bottom: var(--space-xxs); }
+
+article h2, article h3, article h4, .text-container h2, .text-container h3, .text-container h4 {
+  margin-top: var(--space-sm); }
+
+article ul, article ol, article p, .text-container ul, .text-container ol, .text-container p {
+  margin-bottom: var(--space-md); }
+
+article ul, article ol, .text-container ul, .text-container ol {
+  list-style-position: outside;
+  padding-left: 24px; }
+
+article ul, .text-container ul {
+  list-style-type: disc; }
+
+article ol, .text-container ol {
+  list-style-type: decimal; }
+
 /* This file contains all @font-face declarations, if any.
    ========================================================================== */
 /* Basic typography style
@@ -34,6 +67,9 @@
 body {
   font-size: var(--text-base-size);
   font-family: var(--font-primary); }
+
+h1, h2, h3, h4, form legend {
+  line-height: var(--heading-line-height); }
 
 /* text size */
 .text--xxxl {
@@ -57,10 +93,35 @@ h4, .text--md {
 .text--xs {
   font-size: var(--text-xs); }
 
+p {
+  line-height: var(--body-line-height); }
+
+a {
+  color: var(--color-link); }
+  a:visited {
+    color: var(--color-link-visited); }
+
+b, strong {
+  font-weight: bold; }
+
+article ul li, article ol li, .text-container ul li, .text-container ol li {
+  line-height: var(--body-line-height); }
+
+article em, .text-container em {
+  font-style: italic; }
+
+article u, .text-container u {
+  text-decoration: underline; }
+
 /* This file contains CSS helper classes.
    ========================================================================== */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
 /* This file contains the animation keyframes
    ========================================================================== */
 /* This file contains all styles related to the grid system
    ========================================================================== */
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFic3RyYWN0cy9fbWl4aW5zLnNjc3MiLCJhYnN0cmFjdHMvX3ZhcmlhYmxlcy5zY3NzIiwiYmFzZS9fYmFzZS5zY3NzIiwiYmFzZS9fZm9udHMuc2NzcyIsImJhc2UvX3R5cG9ncmFwaHkuc2NzcyIsImJhc2UvX2hlbHBlcnMuc2NzcyIsImJhc2UvX2FuaW1hdGlvbnMuc2NzcyIsImxheW91dC9fZ3JpZC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUFFaEY7NkJBQzZCO0FBQzdCO0VBQ0UsMkJBQWU7RUFDZix3QkFBaUI7RUFDakIsNEJBQWlCO0VBRWpCLHFCQUFxQjtFQUNyQixzQkFBaUI7RUFDakIsd0JBQW1CO0VBR25CLGdCQUFnQjtFQUNoQiwyRUFBVTtFQUNWLCtDQUFVO0VBQ1YsK0NBQVU7RUFDVix5RUFBVTtFQUNWLG1HQUFVO0VBQ1YsOEhBQVc7RUFDWCx5SkFBWSxFQUNiOztBRENPO0VDRU47SUFFSSx5QkFBaUI7SUFDakIseUJBQW1CLEVBQ3RCLEVBQUE7O0FDOUJIO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUNEaEY7Z0ZBQ2dGO0FBQ2hGO0VBQ0ksaUNBQWdDO0VBQ2hDLGlDQUFnQyxFQUVuQzs7QUFRRCxlQUFlO0FBQ2Y7RUFDSSw0QkFBMkIsRUFDOUI7O0FBRUQ7RUFDSSwyQkFBMEIsRUFDN0I7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FDekNEO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUNEaEY7Z0ZBQ2dGIiwiZmlsZSI6Im1haW4uY3NzIn0= */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFic3RyYWN0cy9fbWl4aW5zLnNjc3MiLCJhYnN0cmFjdHMvX3ZhcmlhYmxlcy5zY3NzIiwiYmFzZS9fYmFzZS5zY3NzIiwiYmFzZS9fZm9udHMuc2NzcyIsImJhc2UvX3R5cG9ncmFwaHkuc2NzcyIsImJhc2UvX2hlbHBlcnMuc2NzcyIsImJhc2UvX2FuaW1hdGlvbnMuc2NzcyIsImxheW91dC9fZ3JpZC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUFFaEY7NkJBQzZCO0FBQzdCO0VBQ0UsMkJBQWU7RUFDZix3QkFBaUI7RUFDakIsNEJBQWlCO0VBRWpCLHFCQUFxQjtFQUNyQixzQkFBaUI7RUFDakIsd0JBQW1CO0VBQ25CLGlCQUFXO0VBRVgsZ0JBQWdCO0VBQ2hCLDJFQUFVO0VBQ1YsK0NBQVU7RUFDViwrQ0FBVTtFQUNWLHlFQUFVO0VBQ1YsbUdBQVU7RUFDViw4SEFBVztFQUNYLHlKQUFZO0VBRVosb0JBQW9CO0VBQ3BCLHFCQUFhO0VBQ2Isc0JBQVk7RUFDWixvQkFBVztFQUNYLHFCQUFXO0VBQ1gscUJBQVc7RUFDWCxrQkFBVztFQUNYLHFCQUFXO0VBQ1gscUJBQVk7RUFDWixvQkFBYTtFQUViLGlCQUFpQjtFQUNqQiwyQkFBc0I7RUFDdEIsd0JBQW1CLEVBQ3BCOztBRGRPO0VDa0JOO0lBRUkseUJBQWlCO0lBQ2pCLHlCQUFtQixFQUN0QixFQUFBOztBQzlDSDtnRkFDZ0Y7QUFDaEY7RUFDSSxnQ0FBK0IsRUFDbEM7O0FBRUQ7RUFFUSw0QkFBMkIsRUFDOUI7O0FBSEw7RUFNUSwrQkFBOEIsRUFDakM7O0FBUEw7RUFVRSw2QkFBNEI7RUFDdEIsbUJBQWtCLEVBQ3hCOztBQVpGO0VBZUUsc0JBQXFCLEVBQ3JCOztBQWhCRjtFQW1CRSx5QkFBd0IsRUFDckI7O0FDMUJMO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUFDaEY7RUFDSSxpQ0FBZ0M7RUFDaEMsaUNBQWdDLEVBQ25DOztBQUVEO0VBQ0ksd0NBQXVDLEVBQzFDOztBQUVELGVBQWU7QUFDZjtFQUNJLDRCQUEyQixFQUM5Qjs7QUFFRDtFQUNJLDJCQUEwQixFQUM3Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLHFDQUFvQyxFQUN2Qzs7QUFFRDtFQUNJLHlCQUF3QixFQUszQjtFQU5EO0lBSVEsaUNBQWdDLEVBQ25DOztBQUdMO0VBQ0ksa0JBQWlCLEVBQ3BCOztBQUVEO0VBRVEscUNBQW9DLEVBQ3ZDOztBQUhMO0VBTVEsbUJBQWtCLEVBQ3JCOztBQVBMO0VBVVEsMkJBQTBCLEVBQzdCOztBQ25FTDtnRkFDZ0Y7QUFFaEY7RUFDSSxpQkFBZ0I7RUFDaEIsd0JBQXVCO0VBQ3ZCLG9CQUFtQixFQUN0Qjs7QUNQRDtnRkFDZ0Y7QUNEaEY7Z0ZBQ2dGIiwiZmlsZSI6Im1haW4uY3NzIn0= */

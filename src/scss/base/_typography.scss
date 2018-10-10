@@ -3,13 +3,10 @@
 body {
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
-    // color: var(--color-text);
 }
  
 h1, h2, h3, h4, form legend {
-    // color: var(--color-text-heading);
-    // margin-bottom: var(--space-xxs);
-    // line-height: var(--heading-line-height);
+    line-height: var(--heading-line-height);
 }
 
 /* text size */
@@ -42,5 +39,31 @@ h4, .text--md {
 }
 
 p {
-    // line-height: var(--body-line-height);
+    line-height: var(--body-line-height);
+}
+
+a {
+    color: var(--color-link);
+
+    &:visited {
+        color: var(--color-link-visited);
+    }
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+article, .text-container {
+    ul li, ol li {
+        line-height: var(--body-line-height);
+    }
+    
+    em {
+        font-style: italic;
+    }
+
+    u {
+        text-decoration: underline;
+    }
 }
