@@ -1,6 +1,8 @@
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
-// -----------------------------------------------------------------------------
+/* This file contains all application-wide Sass variables.
+   ========================================================================== */
+
+/* 1 -  Typography
+========================== */
 
 /// Primary font family
 /// @type List
@@ -8,7 +10,20 @@ $font-primary: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica
 
 /// Secondary font family
 /// @type List
-$font-secondary: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', serif !default;
+$font-secondary: 'Georgia', serif !default;
+
+/// Monospace font family
+/// @type List
+$font-monospace: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Text base size
+/// @type Length
+$text-base-size: 1em !default;
+
+/// Text scale ratio
+/// @type Length
+$text-scale-ratio: 1.2 !default;
+
 
 /// Copy text color
 /// @type Color
