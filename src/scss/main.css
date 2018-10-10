@@ -1,9 +1,30 @@
+/* This file contains all application-wide Sass mixins.
+   ========================================================================== */
 /* This file contains all application-wide Sass variables.
    ========================================================================== */
 /* 1 -  Typography
 ========================== */
-/* This file contains all application-wide Sass mixins.
-   ========================================================================== */
+:root {
+  --font-primary: sans-serif;
+  --font-secondary: serif;
+  --font-monospace: monospace;
+  /* set base values */
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.2;
+  /* type scale */
+  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+  --text-sm: calc(1em / var(--text-scale-ratio));
+  --text-md: calc(1em * var(--text-scale-ratio));
+  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio)); }
+
+@media only screen and (max-width: 75em) {
+  :root {
+    --text-base-size: 1.25em;
+    --text-scale-ratio: 1.25; } }
+
 /* This file contains very basic styles.
    ========================================================================== */
 /* This file contains all @font-face declarations, if any.
@@ -11,8 +32,30 @@
 /* Basic typography style
    ========================================================================== */
 body {
-  font-size: 1em;
-  font-family: "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font-size: var(--text-base-size);
+  font-family: var(--font-primary); }
+
+/* text size */
+.text--xxxl {
+  font-size: var(--text-xxxl); }
+
+h1, .text--xxl {
+  font-size: var(--text-xxl); }
+
+h2, .text--xl {
+  font-size: var(--text-xl); }
+
+h3, .text--lg {
+  font-size: var(--text-lg); }
+
+h4, .text--md {
+  font-size: var(--text-md); }
+
+.text--sm, small {
+  font-size: var(--text-sm); }
+
+.text--xs {
+  font-size: var(--text-xs); }
 
 /* This file contains CSS helper classes.
    ========================================================================== */
@@ -20,4 +63,4 @@ body {
    ========================================================================== */
 /* This file contains all styles related to the grid system
    ========================================================================== */
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFic3RyYWN0cy9fdmFyaWFibGVzLnNjc3MiLCJhYnN0cmFjdHMvX21peGlucy5zY3NzIiwiYmFzZS9fYmFzZS5zY3NzIiwiYmFzZS9fZm9udHMuc2NzcyIsImJhc2UvX3R5cG9ncmFwaHkuc2NzcyIsImJhc2UvX2hlbHBlcnMuc2NzcyIsImJhc2UvX2FuaW1hdGlvbnMuc2NzcyIsImxheW91dC9fZ3JpZC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO2dGQUNnRjtBQUVoRjs2QkFDNkI7QUNKN0I7Z0ZBQ2dGO0FDRGhGO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUNEaEY7Z0ZBQ2dGO0FBQ2hGO0VBQ0ksZUppQmdCO0VJaEJoQixxR0pJa0csRUlGckc7O0FDTkQ7Z0ZBQ2dGO0FDRGhGO2dGQUNnRjtBQ0RoRjtnRkFDZ0YiLCJmaWxlIjoibWFpbi5jc3MifQ== */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFic3RyYWN0cy9fbWl4aW5zLnNjc3MiLCJhYnN0cmFjdHMvX3ZhcmlhYmxlcy5zY3NzIiwiYmFzZS9fYmFzZS5zY3NzIiwiYmFzZS9fZm9udHMuc2NzcyIsImJhc2UvX3R5cG9ncmFwaHkuc2NzcyIsImJhc2UvX2hlbHBlcnMuc2NzcyIsImJhc2UvX2FuaW1hdGlvbnMuc2NzcyIsImxheW91dC9fZ3JpZC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUFFaEY7NkJBQzZCO0FBQzdCO0VBQ0UsMkJBQWU7RUFDZix3QkFBaUI7RUFDakIsNEJBQWlCO0VBRWpCLHFCQUFxQjtFQUNyQixzQkFBaUI7RUFDakIsd0JBQW1CO0VBR25CLGdCQUFnQjtFQUNoQiwyRUFBVTtFQUNWLCtDQUFVO0VBQ1YsK0NBQVU7RUFDVix5RUFBVTtFQUNWLG1HQUFVO0VBQ1YsOEhBQVc7RUFDWCx5SkFBWSxFQUNiOztBRENPO0VDRU47SUFFSSx5QkFBaUI7SUFDakIseUJBQW1CLEVBQ3RCLEVBQUE7O0FDOUJIO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUNEaEY7Z0ZBQ2dGO0FBQ2hGO0VBQ0ksaUNBQWdDO0VBQ2hDLGlDQUFnQyxFQUVuQzs7QUFRRCxlQUFlO0FBQ2Y7RUFDSSw0QkFBMkIsRUFDOUI7O0FBRUQ7RUFDSSwyQkFBMEIsRUFDN0I7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FBRUQ7RUFDSSwwQkFBeUIsRUFDNUI7O0FDekNEO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUNEaEY7Z0ZBQ2dGIiwiZmlsZSI6Im1haW4uY3NzIn0= */
