@@ -54,16 +54,16 @@ b, strong {
     font-weight: bold;
 }
 
+em {
+    font-style: italic;
+}
+
+u {
+    text-decoration: underline;
+}
+
 article, .text-container {
     ul li, ol li {
         line-height: var(--body-line-height);
-    }
-    
-    em {
-        font-style: italic;
-    }
-
-    u {
-        text-decoration: underline;
     }
 }
