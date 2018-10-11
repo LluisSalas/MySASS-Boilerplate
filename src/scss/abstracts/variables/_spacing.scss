@@ -1,0 +1,23 @@
+/* This file contains all application-wide spacing Sass variables.
+   ========================================================================== */
+
+:root {
+    /* Baseline */
+    --baseline: 24px;
+
+    /* spacing values */
+    --space-xxxs: 0.25em;
+    --space-xxs:  0.375em;
+    --space-xs:   0.5em;
+    --space-sm:   0.75em;
+    --space-md:   1.25em;
+    --space-lg:   2em;
+    --space-xl:   3.25em;
+    --space-xxl:  5.25em;
+    --space-xxxl: 8.5em;
+  
+    /* line-height */
+    --heading-line-height: 1.2;
+    --body-line-height: 1.4;
+  }
+  

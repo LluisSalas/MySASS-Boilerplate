@@ -1,25 +1,61 @@
 /* This file contains all application-wide Sass mixins.
    ========================================================================== */
-/* This file contains all application-wide Sass variables.
+/* This file contains all application-wide color Sass variables.
    ========================================================================== */
-/* 1 -  Typography
-========================== */
 :root {
-  --font-primary: sans-serif;
-  --font-secondary: serif;
-  --font-monospace: monospace;
-  /* set base values */
-  --text-base-size: 1em;
-  --text-scale-ratio: 1.2;
+  /* main colors */
+  --color-primary: #4D84F4;
+  --color-primary-light: rgba(var(--color-primary) tint(15%));
+  --color-primary-dark: rgba(var(--color-primary) shade(15%));
+  --color-primary-bg: rgba(var(--color-primary) alpha(20%));
+  --color-accent: #f5414f;
+  --color-accent-light: rgba(var(--color-accent) tint(15%));
+  --color-accent-dark: rgba(var(--color-accent) shade(10%));
+  --color-accent-bg: rgba(var(--color-accent) alpha(20%));
+  --black: #1d1d21;
+  --gray-10: #2e2e31;
+  --gray-6: #7b7a7d;
+  --gray-4: #a5a5a6;
+  --gray-3: #bbbbbc;
+  --gray-2: #d1d0d2;
+  --gray-1: #e8e7e8;
+  --white: white;
+  /* feedback */
+  --color-success: #88c459;
+  --color-error: #f5414f;
+  --color-warning: #ffd137;
+  /* typography colors */
+  --color-text: var(--gray-10);
+  --color-text-heading: var(--black);
+  --color-text-subtle: var(--gray-6);
+  --color-link: var(--color-primary);
+  --color-link-visited: var(--color-primary-dark);
+  --color-mark: var(--color-accent-bg);
+  --color-blockquote-border: var(--gray-2);
+  /* border color */
+  --color-border: var(--gray-2);
+  /* body color */
+  --color-body: var(--white);
+  /* forms color */
+  --form-element-border: var(--color-border);
+  --form-element-border-focus: var(--color-primary);
+  --form-element-border-error: var(--color-error);
+  --form-element-bg: var(--white);
+  --form-text-placeholder: var(--gray-4);
+  /* buttons color */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary-light);
+  --btn-primary-active: var(--color-primary-dark);
+  --btn-primary-label: var(--white);
+  /* icons color */
+  --color-icon-primary: var(--gray-4);
+  --color-icon-secondary: inherit; }
+
+/* This file contains all application-wide spacing Sass variables.
+   ========================================================================== */
+:root {
+  /* Baseline */
   --baseline: 24px;
-  /* type scale */
-  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
-  --text-sm: calc(1em / var(--text-scale-ratio));
-  --text-md: calc(1em * var(--text-scale-ratio));
-  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
-  --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
-  --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
-  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
   /* spacing values */
   --space-xxxs: 0.25em;
   --space-xxs:  0.375em;
@@ -33,6 +69,24 @@
   /* line-height */
   --heading-line-height: 1.2;
   --body-line-height: 1.4; }
+
+/* This file contains all application-wide typography Sass variables.
+   ========================================================================== */
+:root {
+  --font-primary: sans-serif;
+  --font-secondary: serif;
+  --font-monospace: monospace;
+  /* set base values */
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.2;
+  /* type scale */
+  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+  --text-sm: calc(1em / var(--text-scale-ratio));
+  --text-md: calc(1em * var(--text-scale-ratio));
+  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio)); }
 
 @media only screen and (max-width: 75em) {
   :root {
@@ -129,4 +183,4 @@ article ul li, article ol li, .text-container ul li, .text-container ol li {
     display: grid;
     grid-column-gap: 20px;
     grid-row-gap: 20px; } }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFic3RyYWN0cy9fbWl4aW5zLnNjc3MiLCJhYnN0cmFjdHMvX3ZhcmlhYmxlcy5zY3NzIiwiYmFzZS9fYmFzZS5zY3NzIiwiYmFzZS9fZm9udHMuc2NzcyIsImJhc2UvX3R5cG9ncmFwaHkuc2NzcyIsImJhc2UvX2hlbHBlcnMuc2NzcyIsImJhc2UvX2FuaW1hdGlvbnMuc2NzcyIsImxheW91dC9fZ3JpZC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUFFaEY7NkJBQzZCO0FBQzdCO0VBQ0UsMkJBQWU7RUFDZix3QkFBaUI7RUFDakIsNEJBQWlCO0VBRWpCLHFCQUFxQjtFQUNyQixzQkFBaUI7RUFDakIsd0JBQW1CO0VBQ25CLGlCQUFXO0VBRVgsZ0JBQWdCO0VBQ2hCLDJFQUFVO0VBQ1YsK0NBQVU7RUFDViwrQ0FBVTtFQUNWLHlFQUFVO0VBQ1YsbUdBQVU7RUFDViw4SEFBVztFQUNYLHlKQUFZO0VBRVosb0JBQW9CO0VBQ3BCLHFCQUFhO0VBQ2Isc0JBQVk7RUFDWixvQkFBVztFQUNYLHFCQUFXO0VBQ1gscUJBQVc7RUFDWCxrQkFBVztFQUNYLHFCQUFXO0VBQ1gscUJBQVk7RUFDWixvQkFBYTtFQUViLGlCQUFpQjtFQUNqQiwyQkFBc0I7RUFDdEIsd0JBQW1CLEVBQ3BCOztBRGRPO0VDa0JOO0lBRUUseUJBQWlCO0lBQ2pCLHlCQUFtQixFQUNwQixFQUFBOztBQzlDSDtnRkFDZ0Y7QUFDaEY7RUFDSSxnQ0FBK0IsRUFDbEM7O0FBRUQ7RUFFUSw0QkFBMkIsRUFDOUI7O0FBSEw7RUFNUSwrQkFBOEIsRUFDakM7O0FBUEw7RUFVRSw2QkFBNEI7RUFDdEIsbUJBQWtCLEVBQ3hCOztBQVpGO0VBZUUsc0JBQXFCLEVBQ3JCOztBQWhCRjtFQW1CRSx5QkFBd0IsRUFDckI7O0FDMUJMO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUFDaEY7RUFDSSxpQ0FBZ0M7RUFDaEMsaUNBQWdDLEVBQ25DOztBQUVEO0VBQ0ksd0NBQXVDLEVBQzFDOztBQUVELGVBQWU7QUFDZjtFQUNJLDRCQUEyQixFQUM5Qjs7QUFFRDtFQUNJLDJCQUEwQixFQUM3Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLHFDQUFvQyxFQUN2Qzs7QUFFRDtFQUNJLHlCQUF3QixFQUszQjtFQU5EO0lBSVEsaUNBQWdDLEVBQ25DOztBQUdMO0VBQ0ksa0JBQWlCLEVBQ3BCOztBQUVEO0VBQ0ksbUJBQWtCLEVBQ3JCOztBQUVEO0VBQ0ksMkJBQTBCLEVBQzdCOztBQUVEO0VBRVEscUNBQW9DLEVBQ3ZDOztBQ25FTDtnRkFDZ0Y7QUFFaEY7RUFDSSxpQkFBZ0I7RUFDaEIsd0JBQXVCO0VBQ3ZCLG9CQUFtQixFQUN0Qjs7QUNQRDtnRkFDZ0Y7QUNEaEY7Z0ZBQ2dGO0FBUWxEO0VBNkM5QjtJQTVDUSxjQUFhO0lBQ2Isc0JBUmE7SUFTYixtQkFUYSxFQXNEcEIsRUFBQSIsImZpbGUiOiJtYWluLmNzcyJ9 */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFic3RyYWN0cy9fbWl4aW5zLnNjc3MiLCJhYnN0cmFjdHMvdmFyaWFibGVzL19jb2xvcnMuc2NzcyIsImFic3RyYWN0cy92YXJpYWJsZXMvX3NwYWNpbmcuc2NzcyIsImFic3RyYWN0cy92YXJpYWJsZXMvX3R5cG9ncmFwaHkuc2NzcyIsImJhc2UvX2Jhc2Uuc2NzcyIsImJhc2UvX2ZvbnRzLnNjc3MiLCJiYXNlL190eXBvZ3JhcGh5LnNjc3MiLCJiYXNlL19oZWxwZXJzLnNjc3MiLCJiYXNlL19hbmltYXRpb25zLnNjc3MiLCJsYXlvdXQvX2dyaWQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtnRkFDZ0Y7QUNEaEY7Z0ZBQ2dGO0FBRWhGO0VBQ0ksaUJBQWlCO0VBQ2pCLHlCQUFnQjtFQUNoQiw0REFBc0I7RUFDdEIsNERBQXFCO0VBQ3JCLDBEQUFtQjtFQUVuQix3QkFBZTtFQUNmLDBEQUFxQjtFQUNyQiwwREFBb0I7RUFDcEIsd0RBQWtCO0VBR2xCLGlCQUFRO0VBQ1IsbUJBQVU7RUFDVixrQkFBUztFQUNULGtCQUFTO0VBQ1Qsa0JBQVM7RUFDVCxrQkFBUztFQUNULGtCQUFTO0VBQ1QsZUFBUTtFQUVSLGNBQWM7RUFDZCx5QkFBZ0I7RUFDaEIsdUJBQWM7RUFDZCx5QkFBZ0I7RUFFaEIsdUJBQXVCO0VBQ3ZCLDZCQUFhO0VBQ2IsbUNBQXFCO0VBQ3JCLG1DQUFvQjtFQUNwQixtQ0FBYTtFQUNiLGdEQUFxQjtFQUNyQixxQ0FBYTtFQUNiLHlDQUEwQjtFQUUxQixrQkFBa0I7RUFDbEIsOEJBQWU7RUFFZixnQkFBZ0I7RUFDaEIsMkJBQWE7RUFFYixpQkFBaUI7RUFDakIsMkNBQXNCO0VBQ3RCLGtEQUE0QjtFQUM1QixnREFBNEI7RUFDNUIsZ0NBQWtCO0VBQ2xCLHVDQUF3QjtFQUV4QixtQkFBbUI7RUFDbkIsdUNBQWlCO0VBQ2pCLGdEQUFvQjtFQUNwQixnREFBcUI7RUFDckIsa0NBQW9CO0VBRXBCLGlCQUFpQjtFQUNqQixvQ0FBcUI7RUFDckIsZ0NBQXVCLEVBQ3hCOztBQzdESDtnRkFDZ0Y7QUFFaEY7RUFDSSxjQUFjO0VBQ2QsaUJBQVc7RUFFWCxvQkFBb0I7RUFDcEIscUJBQWE7RUFDYixzQkFBWTtFQUNaLG9CQUFXO0VBQ1gscUJBQVc7RUFDWCxxQkFBVztFQUNYLGtCQUFXO0VBQ1gscUJBQVc7RUFDWCxxQkFBWTtFQUNaLG9CQUFhO0VBRWIsaUJBQWlCO0VBQ2pCLDJCQUFzQjtFQUN0Qix3QkFBbUIsRUFDcEI7O0FDckJIO2dGQUNnRjtBQUVoRjtFQUNJLDJCQUFlO0VBQ2Ysd0JBQWlCO0VBQ2pCLDRCQUFpQjtFQUVqQixxQkFBcUI7RUFDckIsc0JBQWlCO0VBQ2pCLHdCQUFtQjtFQUVuQixnQkFBZ0I7RUFDaEIsMkVBQVU7RUFDViwrQ0FBVTtFQUNWLCtDQUFVO0VBQ1YseUVBQVU7RUFDVixtR0FBVTtFQUNWLDhIQUFXO0VBQ1gseUpBQVksRUFDYjs7QUhJSztFR0FKO0lBRUUseUJBQWlCO0lBQ2pCLHlCQUFtQixFQUNwQixFQUFBOztBQzVCTDtnRkFDZ0Y7QUFDaEY7RUFDSSxnQ0FBK0IsRUFDbEM7O0FBRUQ7RUFFUSw0QkFBMkIsRUFDOUI7O0FBSEw7RUFNUSwrQkFBOEIsRUFDakM7O0FBUEw7RUFVRSw2QkFBNEI7RUFDdEIsbUJBQWtCLEVBQ3hCOztBQVpGO0VBZUUsc0JBQXFCLEVBQ3JCOztBQWhCRjtFQW1CRSx5QkFBd0IsRUFDckI7O0FDMUJMO2dGQUNnRjtBQ0RoRjtnRkFDZ0Y7QUFDaEY7RUFDSSxpQ0FBZ0M7RUFDaEMsaUNBQWdDLEVBQ25DOztBQUVEO0VBQ0ksd0NBQXVDLEVBQzFDOztBQUVELGVBQWU7QUFDZjtFQUNJLDRCQUEyQixFQUM5Qjs7QUFFRDtFQUNJLDJCQUEwQixFQUM3Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLDBCQUF5QixFQUM1Qjs7QUFFRDtFQUNJLHFDQUFvQyxFQUN2Qzs7QUFFRDtFQUNJLHlCQUF3QixFQUszQjtFQU5EO0lBSVEsaUNBQWdDLEVBQ25DOztBQUdMO0VBQ0ksa0JBQWlCLEVBQ3BCOztBQUVEO0VBQ0ksbUJBQWtCLEVBQ3JCOztBQUVEO0VBQ0ksMkJBQTBCLEVBQzdCOztBQUVEO0VBRVEscUNBQW9DLEVBQ3ZDOztBQ25FTDtnRkFDZ0Y7QUFFaEY7RUFDSSxpQkFBZ0I7RUFDaEIsd0JBQXVCO0VBQ3ZCLG9CQUFtQixFQUN0Qjs7QUNQRDtnRkFDZ0Y7QUNEaEY7Z0ZBQ2dGO0FBUWxEO0VBNkM5QjtJQTVDUSxjQUFhO0lBQ2Isc0JBUmE7SUFTYixtQkFUYSxFQXNEcEIsRUFBQSIsImZpbGUiOiJtYWluLmNzcyJ9 */
