@@ -41,8 +41,8 @@
 // For testing purposes
 @include breakpoint(tab-land) {
   :root {
-      // you can manage typography editing only these 2 variables
-      --text-base-size: 1.25em;
-      --text-scale-ratio: 1.25;
+    // you can manage typography editing only these 2 variables
+    --text-base-size: 1.25em;
+    --text-scale-ratio: 1.25;
   }
 }
