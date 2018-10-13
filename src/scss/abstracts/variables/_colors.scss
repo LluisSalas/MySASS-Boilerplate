@@ -3,30 +3,30 @@
 
 :root {
     /* main colors */
-    --color-primary: #4D84F4;
-    --color-primary-light: rgba(var(--color-primary) tint(15%));
-    --color-primary-dark: rgba(var(--color-primary) shade(15%));
-    --color-primary-bg: rgba(var(--color-primary) alpha(20%));
+    --color-primary: rgba(14, 57, 141, 1);
+    --color-primary-light: rgba(35, 79, 167, 1);
+    --color-primary-dark: rgba(9, 45, 115, 1);
+    --color-primary-bg: rgba(14, 57, 141, .7);
   
-    --color-accent: #f5414f;
-    --color-accent-light: rgba(var(--color-accent) tint(15%));
-    --color-accent-dark: rgba(var(--color-accent) shade(10%));
-    --color-accent-bg: rgba(var(--color-accent) alpha(20%));
+    --color-accent: rgba(245, 65, 78, 1);
+    --color-accent-light: rgba(250, 100, 111, 1);
+    --color-accent-dark: rgba(233, 18, 34, 1);
+    --color-accent-bg: rgba(245, 65, 78, .7);
   
     // shades - generated using chroma.js - 12 steps
-    --black: #1d1d21;
-    --gray-10: #2e2e31;
-    --gray-6: #7b7a7d;
-    --gray-4: #a5a5a6;
-    --gray-3: #bbbbbc;
-    --gray-2: #d1d0d2;
-    --gray-1: #e8e7e8;
-    --white: white;
+    --black: rgba(29, 29, 33, 1);
+    --gray-10: rgba(46, 46, 49, 1);
+    --gray-6: rgba(123, 122, 125, 1);
+    --gray-4: rgba(165, 165, 166, 1);
+    --gray-3: rgba(187, 187, 188, 1);
+    --gray-2: rgba(209, 208, 210, 1);
+    --gray-1: rgba(232, 231, 232, 1);
+    --white: rgba(255, 255, 255, 1);
   
     /* feedback */
-    --color-success: #88c459;
-    --color-error: #f5414f;
-    --color-warning: #ffd137;
+    --color-success: #rgba(136, 196, 89, 1);
+    --color-error: #rgba(245, 65, 79, 1);
+    --color-warning: #rgba(255, 209, 55, 1);
   
     /* typography colors */
     --color-text: var(--gray-10);
@@ -50,11 +50,26 @@
     --form-element-bg: var(--white);
     --form-text-placeholder: var(--gray-4);
   
-    /* buttons color */
+    /* buttons */
+    --btn-default-bg: var(--gray-1);
+    --btn-default-label: var(--color-link);
+
     --btn-primary-bg: var(--color-primary);
     --btn-primary-hover: var(--color-primary-light);
     --btn-primary-active: var(--color-primary-dark);
     --btn-primary-label: var(--white);
+
+    --btn-secondary-bg: var(--gray-4);
+    --btn-secondary-active: var(--gray-2);
+    --btn-secondary-label: var(--gray-10);
+
+    --btn-accent-bg: var(--color-accent);
+    --btn-accent-hover: var(--color-accent-light);
+    --btn-accent-active: var(--color-accent-dark);
+    --btn-accent-label: var(--white);
+
+    --btn-disabled-bg: var(--gray-2);
+    --btn-disabled-label: var(--gray-10);
   
     /* icons color */
     --color-icon-primary: var(--gray-4);
